@@ -6,6 +6,18 @@
     border: 3px solid black;
 }
 
+.search-container {
+    border: 3px solid yellow;
+}
+
 .card {
     border: 3px solid red;
+}
+
+.weather-display {
+    border: 3px solid blue;
+}
+
+.forecast-container {
+    border: 3px solid green;
 }
