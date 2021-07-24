@@ -15,8 +15,8 @@ function getApi(cityValue) {
             var temp = $('<p>').addClass('card-text').text(`Temp: ${data.main.temp}`);
             var humidity = $('<p>').addClass('card-text').text(`Humidity: ${data.main.humidity}`);
             var wind = $('<p>').addClass('card-text').text(`Wind: ${data.wind.speed}`);
-            var icon = $('<img>').addClass('card-text').attr("src","" + $(data.weather.icon) + "");
-            $("#current-city").append(cityName, temp, humidity, wind, icon);
+            // var icon = $('<img>').addClass('card-text').attr("src","" + $(data.weather.icon) + "");
+            $("#current-city").append(cityName, temp, humidity, wind);
             uvIndex(data.coord.lat, data.coord.lon)
             fiveDay(cityValue);
         })
