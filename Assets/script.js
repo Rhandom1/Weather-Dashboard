@@ -1,5 +1,4 @@
 var searchButton = $('#searchBtn');
-var searchEl = $('.list-group');
 
 // add api?
 function getApi(cityValue) {
@@ -10,12 +9,12 @@ function getApi(cityValue) {
             return response.json();
         })
         .then(function (data) {
-            // console.log(data);
+            console.log(data);
             var cityName = $('<h2>').addClass('card-title').text(`${data.name} (${new Date().toLocaleDateString()})`);
             var temp = $('<p>').addClass('card-text').text(`Temp: ${data.main.temp}`);
             var humidity = $('<p>').addClass('card-text').text(`Humidity: ${data.main.humidity}`);
             var wind = $('<p>').addClass('card-text').text(`Wind: ${data.wind.speed}`);
-            // var icon = $('<img>').addClass('card-text').attr("src","" + $(data.weather.icon) + "");
+            // var icon = $('<img>').addClass('card-text').attr("src", `${data.weather[0].icon}`);
             $("#current-city").append(cityName, temp, humidity, wind);
             uvIndex(data.coord.lat, data.coord.lon)
             fiveDay(cityValue);
@@ -55,7 +54,7 @@ function fiveDay(cityValue) {
                     var date = $('<h4>').addClass('card-title').text(new Date(element.dt_txt).toLocaleDateString());
                     var temp = $('<p>').addClass('card-text').text(`temp: ${data.list[i].main.temp}`);
                     var humidity = $('<p>').addClass('card-text').text(`Humidity: ${data.list[i].main.humidity}`);
-                    // var icon = $('<img>').addClass('card-image').src(`${data.list[i].weather.icon}`);
+                    // var icon = $('<img>').addClass('card-image').src("http://openweathermap.org/img/wn/" + ${data.weather[0].icon} + "@2x.png");
                     
                     //create variables for data to call and add to the append line
                     $('#forecast').append(card.append(cardBody.append(date, temp, humidity)));
@@ -68,8 +67,13 @@ function fiveDay(cityValue) {
 
 $("#searchBtn").click(function(){
     var cityValue = $('#search').val();
+    var searchListEl = $('<li>').appendTo(".list").text(cityValue);
     // console.log(cityValue);
     getApi(cityValue);
+
+
+    localStorage.getItem(cityValue);
+    localStorage.setItem(searchListEl, cityValue);
 })
 
 // TO DO:
