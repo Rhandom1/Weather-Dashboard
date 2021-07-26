@@ -74,6 +74,8 @@ $("#searchBtn").click(function(){
 
     localStorage.getItem(cityValue);
     localStorage.setItem(searchListEl, cityValue);
+
+    $('li').on('click', getApi);
 })
 
 // TO DO:
