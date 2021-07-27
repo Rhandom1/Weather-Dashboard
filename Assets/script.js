@@ -65,7 +65,6 @@ function fiveDay(cityValue) {
                 const element = data.list[i];
                 //i= -1 means it is not in the array
                 if (element.dt_txt.indexOf('12:00:00') != -1) {
-                    console.log(element);
                     var card = $('<div>').addClass('card bg-primary text-white');
                     var cardBody = $('<div>').addClass("card-body");
                     var date = $('<h4>').addClass('card-title').text(new Date(element.dt_txt).toLocaleDateString());
