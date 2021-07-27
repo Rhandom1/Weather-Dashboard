@@ -14,11 +14,20 @@
     border: 3px solid blue;
 }
 
-.uvi {
-    background-color: red;
+.hidden {
+    display:none;
+}
+
+.favorable {
+    background-color: green;
     color: white;
 }
 
-.hidden {
-    display:none;
+.moderate {
+    background-color: yellow;
+}
+
+.severe {
+    background-color: red;
+    color: white;
 }
