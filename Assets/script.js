@@ -65,7 +65,7 @@ function fiveDay(cityValue) {
         })
 }
 
-$("#searchBtn").click(function(){
+$("#searchBtn").on('click', function() {
     var cityValue = $('#search').val();
     var searchListEl = $('<li>').appendTo(".list").text(cityValue);
     // console.log(cityValue);
@@ -75,13 +75,17 @@ $("#searchBtn").click(function(){
     localStorage.getItem(cityValue);
     localStorage.setItem(searchListEl, cityValue);
 
-    $('li').on('click', getApi);
+})
+
+$('li').on('click', function(event) {
+    // event.preventDefault();
+    console.log('li was clicked');
 })
 
 // TO DO:
-    //Save search results in local Storage
-    //City should appear below search box
-    //clikcing on city should run a search for that city
+    //Clear search box
+    //Prevent default on 80?
+    //When new city is searched, clear display
 
 //Add icons to forecast
 //remove borders
