@@ -3,15 +3,10 @@
 }
 
 #search-div {
-    border: 3px solid black;
-}
-
-.search-container {
-    border: 3px solid yellow;
+    border: 1px solid black;
 }
 
 .card {
-    border: 3px solid red;
     margin: 10px;
 }
 
@@ -19,11 +14,11 @@
     border: 3px solid blue;
 }
 
-.forecast-container {
-    border: 3px solid green;
-}
-
 .uvi {
     background-color: red;
     color: white;
+}
+
+.hidden {
+    display:none;
 }

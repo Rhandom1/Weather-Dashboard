@@ -56,7 +56,7 @@ function fiveDay(cityValue) {
                     
                     //create variables for data to call and add to the append line
                     $('#forecast').append(card.append(cardBody.append(date, temp, humidity)));
-
+                    
                 };
                 
             }
@@ -70,18 +70,20 @@ $("#searchBtn").on('click', function() {
     searchListEl.appendTo('.list');
     getApi(cityValue);
     
-
+    $('#forecast-5-day').removeClass("hidden");
 
     localStorage.getItem(cityValue);
     localStorage.setItem(searchListEl, cityValue);
 
     document.getElementById('search').value = "";
-    document.querySelector('.weather-display').value = "";
+    
 })
 
 $(document).on('click', '.list', function(event) {
     var citySearch = $(event.target).text().trim();
     getApi(citySearch);
+
+    $("#forecast-container").empty();
 })
 
 // TO DO:
