@@ -1,7 +1,10 @@
 # 06 Server-Side APIs: Weather Dashboard
 
+## Purpose
 
-## Acceptance Criteria
+The purpose of this project was to creat a working application from scratch, utilizing the OpenWeather API. Framework and scripting where left to our choices. This particular app uses Bootstrap and Jquery for a majority of the coding.
+
+### Acceptance Criteria
 
 ```
 GIVEN a weather dashboard with form inputs
@@ -16,3 +19,9 @@ THEN I am presented with a 5-day forecast that displays the date, an icon repres
 WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 ```
+
+#### Screenshots and links
+![Weather App](./Assets/Images/wx-app-live.png)
+
+https://rhandom1.github.io/Weather-Dashboard/
+https://github.com/Rhandom1/Weather-Dashboard

@@ -103,6 +103,3 @@ $(document).on('click', '.list', function(event) {
 
     
 })
-
-// TO DO:
-    //README
