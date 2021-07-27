@@ -29,7 +29,6 @@ function uvIndex(lat,lon) {
             return response.json();
         })
         .then(function (data) {
-            // console.log(data);
             var uv = $('<p>').addClass('card-text uvi').text(`UV Index: ${data.current.uvi}`);
             $("#current-city").append(uv);
         })
@@ -43,7 +42,6 @@ function fiveDay(cityValue) {
             return response.json();
         })
         .then(function (data) {
-            // console.log(data);
             for (let i = 0; i < data.list.length; i++) {
                 const element = data.list[i];
                 //i= -1 means it is not in the array
@@ -67,24 +65,28 @@ function fiveDay(cityValue) {
 
 $("#searchBtn").on('click', function() {
     var cityValue = $('#search').val();
-    var searchListEl = $('<li>').appendTo(".list").text(cityValue);
-    // console.log(cityValue);
+    var searchListEl = $('<li>').text(cityValue);
+
+    searchListEl.appendTo('.list');
     getApi(cityValue);
+    
 
 
     localStorage.getItem(cityValue);
     localStorage.setItem(searchListEl, cityValue);
 
+    document.getElementById('search').value = "";
+    document.querySelector('.weather-display').value = "";
 })
 
-$('li').on('click', function(event) {
-    // event.preventDefault();
-    console.log('li was clicked');
+$(document).on('click', '.list', function(event) {
+    var citySearch = $(event.target).text().trim();
+    getApi(citySearch);
+
+    
 })
 
 // TO DO:
-    //Clear search box
-    //Prevent default on 80?
     //When new city is searched, clear display
 
 //Add icons to forecast
