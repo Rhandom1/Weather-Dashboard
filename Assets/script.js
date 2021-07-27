@@ -82,8 +82,6 @@ $("#searchBtn").on('click', function() {
 $(document).on('click', '.list', function(event) {
     var citySearch = $(event.target).text().trim();
     getApi(citySearch);
-
-    
 })
 
 // TO DO:
