@@ -87,6 +87,8 @@ $("#searchBtn").on('click', function() {
 
     searchListEl.appendTo('.list');
     getApi(cityValue);
+
+    console.log(cityValue);
     
     $('#forecast-5-day').removeClass("hidden");
 
@@ -96,7 +98,7 @@ $("#searchBtn").on('click', function() {
     document.getElementById('search').value = "";
     
 })
-//genreate the getAPI function when the city saved in teh search list is clicked
+//genreate the getAPI function when the city saved in the search list is clicked
 $(document).on('click', '.list', function(event) {
     var citySearch = $(event.target).text().trim();
     getApi(citySearch);
